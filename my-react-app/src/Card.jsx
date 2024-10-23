@@ -7,7 +7,7 @@ function Card({ formData, picture, isDarkMode }) {
         <div>
           <h2 className="text-2xl font-bold mb-2">{formData.name}</h2>
           <div className="space-y-1">
-            <p>{formData.email}</p>
+            <h6>{formData.email}</h6>
             <p>{formData.phone}</p>
             <p>{formData.address}</p>
           </div>

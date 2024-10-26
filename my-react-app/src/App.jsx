@@ -9,6 +9,7 @@ function App() {
     email: '',
     phone: '',
     address: '',
+    summary: '',
     education: [{ school: '', degree: '', year: '' }],
     experience: [{ company: '', position: '', duration: '', description: '' }],
     skills: [''],
@@ -57,6 +58,8 @@ function App() {
       experience: [...prev.experience, { company: '', position: '', duration: '', description: '' }]
     }));
   };
+
+
 
   const handleSkillsChange = (index, value) => {
     const newSkills = [...formData.skills];
@@ -191,6 +194,24 @@ function App() {
             </div>
           </section>
   
+          <section className={sectionClassName}>
+            <h2 className={titleClassName}>Summary</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor='summary' className={titleClassName}>Describe yourself: </label>
+                <textarea
+                  id="summary"
+                  type="summary"
+                  placeholder='give a small paragraph describing yourself..'
+                  name='summary'
+                  value={formData.summary}
+                  onChange={handleInputChange}
+                  className={inputClassName}
+                />
+              </div>
+            </div>
+          </section>
+
           {/* Education Section */}
           <section className={sectionClassName}>
             <h2 className={titleClassName}>Education</h2>

@@ -3,14 +3,18 @@ import React from 'react';
 function Card({ formData, picture, isDarkMode }) {
   return (
     <div className={`border p-6 rounded-lg ${isDarkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-800'}`}>
-      <div className="flex items-start justify-between mb-6">
+      <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-2xl font-bold mb-2">{formData.name}</h2>
-          <div className="space-y-1">
-            <h6>{formData.email}</h6>
+          <h2 className="text-5xl text-center font-serif mb-2">{formData.name}</h2>
+          <hr className=' border-y-black'></hr>
+          <div className="flex space-x-4 justify-evenly">
+            <p>{formData.email}</p>
             <p>{formData.phone}</p>
             <p>{formData.address}</p>
           </div>
+          <h3 className=" mt-3 text-xl font-bold mb-1">Profile</h3>
+          <hr className='border-black mb-2'></hr>
+            <p>{formData.summary}</p>
         </div>
         {picture && (
           <img 
@@ -25,7 +29,8 @@ function Card({ formData, picture, isDarkMode }) {
 
       {formData.education.length > 0 && (
         <div className="mb-6">
-          <h3 className="text-xl font-bold mb-2">Education</h3>
+          <h3 className="text-xl font-bold mb-1">Education</h3>
+          <hr className='border-black mb-2'></hr>
           {formData.education.map((edu, index) => (
             <div key={index} className="mb-2">
               <p className="font-semibold">{edu.school}</p>
@@ -38,7 +43,8 @@ function Card({ formData, picture, isDarkMode }) {
 
       {formData.experience.length > 0 && (
         <div className="mb-6">
-          <h3 className="text-xl font-bold mb-2">Work Experience</h3>
+          <h3 className="text-xl font-bold mb-1">Work Experience</h3>
+          <hr className='border-black mb-2'></hr>
           {formData.experience.map((exp, index) => (
             <div key={index} className="mb-4">
               <p className="font-semibold">{exp.company}</p>
